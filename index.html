@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mantra | Portfolio</title>
+  <meta name="description" content="Portfolio of Mantra Patil - Engineering Student, Python Developer, Ethical Hacking & Cybersecurity Enthusiast.">
+  <meta name="keywords" content="Portfolio, Python, Cybersecurity, Ethical Hacking, Student, Projects">
+  <meta name="author" content="Mantra Patil">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Enhanced Hacker-style Matrix background - Brought more to the front */
+    #matrix-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0; /* Moved from -1 to 0 to layer it just behind content */
+      opacity: 0.2; /* Increased opacity for more prominence */
+    }
+    body {
+      position: relative;
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); /* Subtle gradient for depth */
+      background-attachment: fixed;
+    }
+    .content-wrapper {
+      position: relative;
+      z-index: 1;
+      background: rgba(15, 23, 42, 0.6); /* Reduced opacity from 0.85 to 0.6 for more background visibility */
+      min-height: 100vh;
+      backdrop-filter: blur(3px); /* Reduced blur to let more background through */
+    }
+    /* Navigation bar styling - More transparent */
+    nav {
+      background: rgba(31, 41, 55, 0.8); /* Reduced from 0.95 */
+      backdrop-filter: blur(8px); /* Slightly less blur */
+    }
+    /* Section backgrounds - More transparent to show live background */
+    #skills, #contact {
+      background: rgba(31, 41, 55, 0.3) !important; /* Reduced opacity for sections */
+    }
+    /* Project cards - Semi-transparent */
+    .project-card {
+      background: rgba(31, 41, 55, 0.7) !important; /* More transparent */
+    }
+    /* Card hover effects */
+    .project-card, .skill-tag {
+      transition: all 0.3s ease;
+      transform: translateY(0);
+    }
+    .project-card:hover, .skill-tag:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+    }
+    /* Glow effect for highlights */
+    .highlight {
+      text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+    }
+  </style>
+</head>
+<body class="text-slate-100 font-sans overflow-x-hidden">
+  <!-- Matrix Background Canvas - Now more prominent -->
+  <canvas id="matrix-bg"></canvas>
+
+  <!-- Content Wrapper for Readability -->
+  <div class="content-wrapper">
+    <!-- Navigation Bar -->
+    <nav class="shadow-lg sticky top-0 z-50" role="navigation">
+      <div class="max-w-6xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+          <a href="#home" class="text-2xl font-bold text-cyan-400 flex items-center">
+            <i class="fas fa-code mr-2"></i> Mantra
+          </a>
+          <ul class="flex space-x-8 hidden md:flex">
+            <li><a href="#about" class="hover:text-cyan-400 transition">About</a></li>
+            <li><a href="#skills" class="hover:text-cyan-400 transition">Skills</a></li>
+            <li><a href="#projects" class="hover:text-cyan-400 transition">Projects</a></li>
+            <li><a href="#contact" class="hover:text-cyan-400 transition">Contact</a></li>
+          </ul>
+          <button class="md:hidden text-cyan-400">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Header -->
+    <header id="home" class="min-h-screen flex items-center justify-center text-center px-6" role="banner">
+      <div class="max-w-4xl mx-auto">
+        <div class="animate-bounce mb-8">
+          <i class="fas fa-hacker text-6xl text-cyan-400"></i>
+        </div>
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 highlight">👋 Hi, I'm Mantra</h1>
+        <p class="text-xl md:text-2xl text-slate-300 mb-8 leading-relaxed">
+          Engineering Student | Python Developer (Learning) | Ethical Hacking &amp; Cybersecurity Enthusiast
+        </p>
+        <a href="#about" class="bg-cyan-500 hover:bg-cyan-600 text-black px-8 py-4 rounded-full font-semibold transition transform hover:scale-105 inline-block">
+          <i class="fas fa-arrow-down mr-2"></i> Explore My World
+        </a>
+      </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="max-w-6xl mx-auto py-20 px-6">
+      <div class="text-center mb-16">
+        <h2 id="about-title" class="text-4xl md:text-5xl font-bold border-b-2 border-cyan-500 inline-block mb-6 highlight">🚀 About Me</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-green-500 mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-slate-300 leading-relaxed text-lg mb-6">
+            I'm an <span class="text-cyan-400 font-semibold highlight">Engineering Student</span> passionate about 
+            <span class="text-cyan-400 font-semibold highlight">Python Development</span>, 
+            <span class="text-cyan-400 font-semibold highlight">Ethical Hacking</span>, and 
+            <span class="text-cyan-400 font-semibold highlight">Cybersecurity</span>. 
+            Currently, I am learning and building beginner-friendly Python projects while exploring the world of security, ethical hacking, and networking concepts.
+          </p>
+          <div class="flex justify-center md:justify-start space-x-6 mt-8">
+            <a href="#projects" class="text-cyan-400 hover:text-cyan-300 transition">
+              <i class="fas fa-folder-open text-2xl"></i>
+            </a>
+            <a href="#skills" class="text-cyan-400 hover:text-cyan-300 transition">
+              <i class="fas fa-tools text-2xl"></i>
+            </a>
+            <a href="#contact" class="text-cyan-400 hover:text-cyan-300 transition">
+              <i class="fas fa-envelope text-2xl"></i>
+            </a>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="bg-slate-800/70 rounded-3xl p-8 shadow-2xl border border-cyan-500/20"> <!-- More transparent -->
+            <i class="fas fa-user-astronaut text-8xl text-cyan-400 mx-auto block mb-4"></i>
+            <p class="text-center text-slate-400 italic">"Code. Secure. Innovate."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-6xl mx-auto py-20 px-6 rounded-3xl shadow-2xl mx-6">
+      <div class="text-center mb-16">
+        <h2 id="skills-title" class="text-4xl md:text-5xl font-bold border-b-2 border-cyan-500 inline-block mb-6 highlight">🔧 Skills</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-green-500 mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-4 gap-6 justify-items-center">
+        <span class="skill-tag px-6 py-4 bg-gradient-to-r from-cyan-500/20 to-green-500/20 text-cyan-300 rounded-2xl border border-cyan-500/30 flex items-center space-x-2">
+          <i class="fab fa-python text-xl"></i>
+          <span>Python</span>
+        </span>
+        <span class="skill-tag px-6 py-4 bg-gradient-to-r from-cyan-500/20 to-green-500/20 text-cyan-300 rounded-2xl border border-cyan-500/30 flex items-center space-x-2">
+          <i class="fab fa-linux text-xl"></i>
+          <span>Linux</span>
+        </span>
+        <span class="skill-tag px-6 py-4 bg-gradient-to-r from-cyan-500/20 to-green-500/20 text-cyan-300 rounded-2xl border border-cyan-500/30 flex items-center space-x-2">
+          <i class="fab fa-github text-xl"></i>
+          <span>GitHub</span>
+        </span>
+        <span class="skill-tag px-6 py-4 bg-gradient-to-r from-cyan-500/20 to-green-500/20 text-cyan-300 rounded-2xl border border-cyan-500/30 flex items-center space-x-2">
+          <i class="fas fa-shield-alt text-xl"></i>
+          <span>Cybersecurity Tools</span>
+        </span>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="max-w-6xl mx-auto py-20 px-6">
+      <div class="text-center mb-16">
+        <h2 id="projects-title" class="text-4xl md:text-5xl font-bold border-b-2 border-cyan-500 inline-block mb-6 highlight">📌 Projects</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-green-500 mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="https://github.com/mantrapatil03/security-tools" target="_blank" class="project-card p-8 rounded-3xl shadow-xl border border-cyan-500/20 block transition">
+          <div class="text-center mb-4">
+            <i class="fas fa-lock text-4xl text-cyan-400 mb-4"></i>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-center">Security Tool</h3>
+          <p class="text-slate-400 text-center">A lightweight, all-in-one security tool for developers and testers.</p>
+          <div class="mt-6 text-center">
+            <i class="fab fa-github text-cyan-400 text-xl"></i>
+          </div>
+        </a>
+        <a href="https://github.com/mantrapatil03/Calculator" target="_blank" class="project-card p-8 rounded-3xl shadow-xl border border-cyan-500/20 block transition">
+          <div class="text-center mb-4">
+            <i class="fas fa-calculator text-4xl text-cyan-400 mb-4"></i>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-center">Calculator</h3>
+          <p class="text-slate-400 text-center">Built a smart Python calculator for fast, accurate, and versatile computations.</p>
+          <div class="mt-6 text-center">
+            <i class="fab fa-github text-cyan-400 text-xl"></i>
+          </div>
+        </a>
+        <a href="https://github.com/mantrapatil03/python-beginner-projects" target="_blank" class="project-card p-8 rounded-3xl shadow-xl border border-cyan-500/20 block transition">
+          <div class="text-center mb-4">
+            <i class="fas fa-project-diagram text-4xl text-cyan-400 mb-4"></i>
+          </div>
+          <h3 class="text-2xl font-semibold mb-4 text-center">Python Beginner Projects</h3>
+          <p class="text-slate-400 text-center">A collection of small Python projects for beginners.</p>
+          <div class="mt-6 text-center">
+            <i class="fab fa-github text-cyan-400 text-xl"></i>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-6xl mx-auto py-20 px-6 rounded-3xl shadow-2xl mx-6 text-center">
+      <div class="mb-16">
+        <h2 id="contact-title" class="text-4xl md:text-5xl font-bold border-b-2 border-cyan-500 inline-block mb-6 highlight">🌍 Connect With Me</h2>
+        <div class="w-24 h-1 bg-gradient-to-r from-cyan-400 to-green-500 mx-auto"></div>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8 max-w-2xl mx-auto">
+        <a href="https://github.com/mantrapatil03" target="_blank" class="bg-slate-700/40 p-8 rounded-2xl border border-cyan-500/30 transition flex flex-col items-center space-y-4 hover:bg-cyan-500/20"> <!-- More transparent -->
+          <i class="fab fa-github text-4xl text-cyan-400"></i>
+          <span class="font-semibold">GitHub</span>
+        </a>
+        <a href="https://www.linkedin.com/in/mantrapatil25" target="_blank" class="bg-slate-700/40 p-8 rounded-2xl border border-cyan-500/30 transition flex flex-col items-center space-y-4 hover:bg-cyan-500/20"> <!-- More transparent -->
+          <i class="fab fa-linkedin text-4xl text-cyan-400"></i>
+          <span class="font-semibold">LinkedIn</span>
+        </a>
+        <a href="mailto:mantrapatil2007@gmail.com" class="bg-slate-700/40 p-8 rounded-2xl border border-cyan-500/30 transition flex flex-col items-center space-y-4 hover:bg-cyan-500/20"> <!-- More transparent -->
+          <i class="fas fa-envelope text-4xl text-cyan-400"></i>
+          <span class="font-semibold">Email</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800/60 text-center py-8 mt-12 border-t border-cyan-500/20"> <!-- More transparent -->
+      <small class="text-slate-500">© 2025 Mantra | Built with <span aria-label="love" class="text-red-500">❤️</span> and Python spirit</small>
+    </footer>
+  </div>
+
+  <!-- Animations -->
+  <noscript>
+    <div class="max-w-6xl mx-auto p-4 text-center text-red-400 bg-slate-900">
+      <strong>Note:</strong> For best experience, please enable JavaScript in your browser.
+    </div>
+  </noscript>
+  <script>
+    // Enhanced Matrix Rain Effect (English characters only, with more variety)
+    const canvas = document.getElementById('matrix-bg');
+    const ctx = canvas.getContext('2d');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Expanded English alphanumeric and symbol characters for richer hacker feel
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789@#$%^&*()_+-=[]{}|;:,.<>?/~`';
+    const fontSize = 12; // Slightly smaller for denser effect
+    const columns = canvas.width / fontSize;
+    const drops = Array(Math.floor(columns)).fill(1);
+
+    function draw() {
+      ctx.fillStyle = 'rgba(15, 23, 42, 0.04)'; // Softer fade for smoother trails
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = '#00ff41'; // Classic green
+      ctx.font = `${fontSize}px monospace`;
+
+      drops.forEach((y, i) => {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, y * fontSize);
+
+        if (y * fontSize > canvas.height && Math.random() > 0.98) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      });
+    }
+
+    setInterval(draw, 40); // Slightly faster for more dynamic feel
+
+    // Resize canvas on window resize
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    // Enhanced ScrollReveal Animations
+    if (typeof ScrollReveal !== 'undefined') {
+      ScrollReveal().reveal('.project-card, .skill-tag', { 
+        distance: '20px',
+        duration: 800,
+        easing: 'ease-out',
+        origin: 'bottom',
+        interval: 200,
+        scale: 0.9
+      });
+      ScrollReveal().reveal('section', { 
+        distance: '40px',
+        duration: 1000,
+        easing: 'ease-out',
+        origin: 'left',
+        interval: 300
+      });
+    }
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+</body>
+</html>
